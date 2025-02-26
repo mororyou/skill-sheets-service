@@ -35,11 +35,11 @@ jobs:
       - name: Type Check
         run: pnpm typecheck
 
-      # TODO: Vitest Check
-      # - name: Vitest Check
+      - name: Vitest Check
+        run: pnpm test
 
-      # TODO: Coverage Check
-      # - name: Coverage Check
+      - name: Coverage Check
+        run: pnpm test:cov
 
       # Codecov
 
