@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test": "vitest --run",
+    "test:cov": "vitest --coverage",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.12.0",
