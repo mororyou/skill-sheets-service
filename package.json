@@ -38,6 +38,7 @@
     "@vitest/ui": "^3.0.7",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
+    "jsdom": "^26.0.0",
     "postcss": "^8",
     "prettier": "^3.5.2",
     "prettier-plugin-organize-imports": "^4.1.0",
