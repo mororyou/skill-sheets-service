@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const zStringArray = z.array(z.string().nullable()).nullish();
+export const zStringArray = z.array(z.string()).nullish();
 
 export const zTechnologies = z.object({
   fieldId: z.literal('frameworks'),
