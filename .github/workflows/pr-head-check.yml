@@ -1,0 +1,46 @@
+name: Check PR Base Branch
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  pr_head_check:
+    runs-on: ubuntu-latest
+    steps:
+      - if: github.event.pull_request.base.ref == 'main'
+        name: Check HEAD branch for PR to main
+        run: |
+          allowed_branch_prefixes=("hotfix/" "dependabot/" "staging")
+          for prefix in "${allowed_branch_prefixes[@]}"; do
+            if [[ "${{ github.head_ref }}" == "${prefix}"* ]]; then
+              exit 0
+            fi
+          done
+          echo "ERROR: mainブランチにマージできるのは${allowed_branch_prefixes[@]}から始まるブランチのみです"
+          exit 1
+      - if: github.event.pull_request.base.ref == 'staging'
+        name: Check HEAD branch for PR to Staging
+        run: |
+          allowed_branch_prefixes=("develop")
+          for prefix in "${allowed_branch_prefixes[@]}"; do
+            if [[ "${{ github.head_ref }}" == "${prefix}"* ]]; then
+              exit 0
+            fi
+          done
+          echo "ERROR: stagingブランチにマージできるのは${allowed_branch_prefixes[@]}から始まるブランチのみです"
+          exit 1
+      - if: github.event.pull_request.base.ref == 'develop'
+        name: Check HEAD branch for PR to develop
+        run: |
+          allowed_branch_prefixes=("feature/")
+          for prefix in "${allowed_branch_prefixes[@]}"; do
+            if [[ "${{ github.head_ref }}" == "${prefix}"* ]]; then
+              exit 0
+            fi
+          done
+          echo "ERROR: developブランチにマージできるのは${allowed_branch_prefixes[@]}から始まるブランチのみです"
+          exit 1
+      - if: startsWith(github.event.pull_request.base.ref, 'feature/')
+        name: featureブランチへのPRはマージしない
+        run: exit 1
