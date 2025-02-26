@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest --run",
-    "test:cov": "vitest --coverage",
+    "test:cov": "next build && vitest --coverage",
     "test:ui": "vitest --ui"
   },
   "dependencies": {
