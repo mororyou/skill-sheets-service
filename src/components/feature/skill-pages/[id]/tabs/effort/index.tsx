@@ -24,7 +24,8 @@ export default function EffortTab({ efforts }: EffortTabProps) {
                       <h4 className="mb-1 text-sm font-medium text-muted-foreground">
                         課題:
                       </h4>
-                      <p className="text-sm">{effort.issue}</p>
+
+                      <div dangerouslySetInnerHTML={{ __html: effort.issue }} />
                     </div>
                   )}
                   {effort.devise && (
@@ -32,7 +33,9 @@ export default function EffortTab({ efforts }: EffortTabProps) {
                       <h4 className="mb-1 text-sm font-medium text-muted-foreground">
                         工夫:
                       </h4>
-                      <p className="text-sm">{effort.devise}</p>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: effort.devise }}
+                      />
                     </div>
                   )}
                 </div>
