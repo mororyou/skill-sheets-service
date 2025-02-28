@@ -1,5 +1,6 @@
 'use client';
 
+import Loader from '@/components/_ui/loader';
 import SkillSheetCard from '@/components/feature/skill-pages';
 import { useGetSkillSheets } from '@/queries/skill-sheet';
 import { match, P } from 'ts-pattern';
@@ -21,7 +22,7 @@ export default function SkillSheetsPageContainer() {
               </div>
             ));
         })
-        .with('pending', () => <div>ローディング中</div>)
+        .with('pending', () => <Loader />)
         .with('error', () => <div>エラーが発生しました</div>)
         .exhaustive()}
     </section>
