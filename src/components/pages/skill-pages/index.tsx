@@ -22,7 +22,7 @@ export default function SkillSheetsPageContainer() {
               </div>
             ));
         })
-        .with('pending', () => <div>ローディング中</div>)
+        .with('pending', () => <Loader />)
         .with('error', () => <div>エラーが発生しました</div>)
         .exhaustive()}
     </section>
