@@ -17,10 +17,10 @@ export type Technologies = z.infer<typeof zTechnologies>;
 
 export const zTeam = z.object({
   fieldId: z.literal('teams'),
-  director: z.number(),
-  engineer: z.number(),
-  programmer: z.number(),
-  designer: z.number(),
+  director: z.number().optional(),
+  engineer: z.number().optional(),
+  programmer: z.number().optional(),
+  designer: z.number().optional(),
 });
 
 export type Team = z.infer<typeof zTeam>;
