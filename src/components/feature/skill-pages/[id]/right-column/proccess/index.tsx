@@ -7,11 +7,11 @@ import {
 } from '@/components/_ui/card';
 import { SkillSheet } from '@/queries/skill-sheet/types';
 
-export type ProccessCardProps = Readonly<{
+export type ProcessCardProps = Readonly<{
   process: SkillSheet['process'];
 }>;
 
-export default function ProccessCard({ process }: ProccessCardProps) {
+export default function ProccessCard({ process }: ProcessCardProps) {
   return (
     <Card>
       <CardHeader>
