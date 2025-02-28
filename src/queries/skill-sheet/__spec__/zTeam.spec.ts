@@ -15,12 +15,13 @@ describe('zTeam validation', () => {
     expect(result).toEqual(validData);
   });
 
-  it('フィールドが欠けていた場合エラーを投げる', ({ expect }) => {
+  it('フィールドが欠けていた場合も正常にパースできる', ({ expect }) => {
     const partialData = {
       fieldId: 'teams',
     };
 
-    expect(() => zTeam.parse(partialData)).toThrow();
+    const result = zTeam.parse(partialData);
+    expect(result).toEqual(partialData);
   });
 
   it('fieldIdが"teams"以外の場合エラーを投げる', ({ expect }) => {
