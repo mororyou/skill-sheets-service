@@ -18,7 +18,12 @@ export type SkillSheetCardProps = Readonly<{
 }>;
 
 const calculateTeamSize = (team: SkillSheet['team']) => {
-  return team.director + team.engineer + team.programmer + team.designer;
+  return (
+    (team.director ?? 0) +
+    (team.engineer ?? 0) +
+    (team.programmer ?? 0) +
+    (team.designer ?? 0)
+  );
 };
 
 export default function SkillSheetCard({ sheet }: SkillSheetCardProps) {
