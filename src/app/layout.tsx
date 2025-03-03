@@ -1,3 +1,5 @@
+import Footer from '@/components/_layout/footer';
+import Header from '@/components/_layout/header';
 import QueryProvider from '@/libs/tanstack-query/provider';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
@@ -29,9 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Header />
         <QueryProvider>
           <div className="min-h-screen bg-background">{children}</div>
         </QueryProvider>
+        <Footer />
       </body>
     </html>
   );
