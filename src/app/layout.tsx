@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'スキルシート管理',
-  description: 'プロジェクト経験を管理するスキルシートアプリケーション',
+  title: 'techFountain',
+  description: '技術ブログや、ポートフォリオを発信しています。',
 };
 
 export default function RootLayout({
@@ -25,6 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <meta name="apple-mobile-web-app-title" content="techFountain" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
