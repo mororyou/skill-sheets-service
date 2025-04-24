@@ -4,6 +4,7 @@ import QueryProvider from '@/libs/tanstack-query/provider';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -37,6 +38,7 @@ export default function RootLayout({
         </QueryProvider>
         <Footer />
       </body>
+      <GoogleAnalytics gaId={'G-H3RKN5LNGS'} />
     </html>
   );
 }
